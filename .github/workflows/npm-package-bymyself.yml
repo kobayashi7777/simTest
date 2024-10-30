@@ -1,5 +1,4 @@
-name: NodeJS with Webpack
-
+name: NodeJS package by myself
 on:
   push:
     branches: [ "test" ]
