@@ -36,6 +36,6 @@ jobs:
         cp -r dist/* ./
         git config --local user.email "787449591@qq.com" 
         git config --local user.name "kobayashi7777" 
-        git add.
+        git add .
         git commit -m "Update dist folder in the repository"
         git push origin test 
