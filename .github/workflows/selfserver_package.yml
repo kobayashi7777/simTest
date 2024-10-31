@@ -33,7 +33,7 @@ jobs:
 
     - name: Delte dist in repository
       run: |
-        git rm -r --cached /dist
+        git rm -r --cached ./dist
         git commit -m "delte dist in repository"
         git push origin test 
 
