@@ -31,11 +31,17 @@ jobs:
         ref: test 
         path: . 
 
-    - name: Copy dist folder to the repository
+    - name: Delte dist in repository
+      run: |
+        git rm -r --cached /dist
+        git commit -m "delte dist in repository"
+        git push origin test 
+
+    - name: update dist folder to the repository
       run: |
         #cp -r dist/* ./dist
         git config --local user.email "787449591@qq.com" 
         git config --local user.name "kobayashi7777" 
-        git add -f dist/*
+        git add .
         git commit -a -m "Update dist folder in the repository"
         git push origin test 
