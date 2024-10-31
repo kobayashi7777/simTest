@@ -33,6 +33,8 @@ jobs:
 
     - name: Delte dist in repository
       run: |
+        git config --local user.email "787449591@qq.com" 
+        git config --local user.name "kobayashi7777" 
         git rm -r --cached ./dist
         git commit -m "delte dist in repository"
         git push origin test 
