@@ -2227,8 +2227,9 @@ class Equipment {
     }
 
     getCombatStat(combatStat) {
-        let multiplier = _data_enhancementLevelTotalMultiplierTable_json__WEBPACK_IMPORTED_MODULE_1__[this.enhancementLevel];
+        if (!this.gameItem.equipmentDetail.combatStats.hasOwnProperty(combatStat)||!this.gameItem.equipmentDetail.combatEnhancementBonuses.hasOwnProperty(combatStat))return 0;
 
+        let multiplier = _data_enhancementLevelTotalMultiplierTable_json__WEBPACK_IMPORTED_MODULE_1__[this.enhancementLevel];
         let stat =
             this.gameItem.equipmentDetail.combatStats[combatStat] +
             multiplier * this.gameItem.equipmentDetail.combatEnhancementBonuses[combatStat];
