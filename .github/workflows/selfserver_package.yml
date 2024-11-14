@@ -2,9 +2,9 @@ name: SelfServer NodeJS Webpack
 
 on:
   push:
-    branches: [ "test" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "test" ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -25,25 +25,4 @@ jobs:
         name: dist-files
         path: dist
         
-    - name: Checkout the repository again to update dist folder
-      uses: actions/checkout@v4
-      with:
-        ref: test 
-        path: . 
 
-    - name: Delte dist in repository
-      run: |
-        git config --local user.email "787449591@qq.com" 
-        git config --local user.name "kobayashi7777" 
-        git rm -r --cached ./dist
-        git commit -m "delte dist in repository"
-        git push origin test 
-
-    - name: update dist folder to the repository
-      run: |
-        #cp -r dist/* ./dist
-        git config --local user.email "787449591@qq.com" 
-        git config --local user.name "kobayashi7777" 
-        git add .
-        git commit -a -m "Update dist folder in the repository"
-        git push origin test 
