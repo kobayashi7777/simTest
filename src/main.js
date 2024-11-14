@@ -346,7 +346,9 @@ function updateCombatStatsUI() {
         "mayhem",
         "pierce",
         "curse",
-        "attackSpeed"
+        "attackSpeed",
+        "foodHaste",
+        "drinkConcentration"
     ].forEach((stat) => {
         let element = document.getElementById("combatStat_" + stat);
         let value = (100 * player.combatDetails.combatStats[stat]).toLocaleString([], {
