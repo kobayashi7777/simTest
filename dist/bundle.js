@@ -286,7 +286,9 @@ class CombatUnit {
             pierce: 0,
             curse: 0,
             damageTaken: 0,
-            attackSpeed: 0
+            attackSpeed: 0,
+            foodHaste:0,
+            drinkConcentration:0
         },
     };
     combatBuffs = {};
@@ -951,7 +953,9 @@ class Player extends _combatUnit__WEBPACK_IMPORTED_MODULE_1__["default"] {
             "pierce",
             "curse",
             "attackSpeed",
-            "autoAttackDamage"
+            "autoAttackDamage",
+            "foodHaste",
+            "drinkConcentration"
         ].forEach((stat) => {
             this.combatDetails.combatStats[stat] = Object.values(this.equipment)
                 .filter((equipment) => equipment != null)
@@ -1803,7 +1807,9 @@ function updateCombatStatsUI() {
         "mayhem",
         "pierce",
         "curse",
-        "attackSpeed"
+        "attackSpeed",
+        "foodHaste",
+        "drinkConcentration"
     ].forEach((stat) => {
         let element = document.getElementById("combatStat_" + stat);
         let value = (100 * player.combatDetails.combatStats[stat]).toLocaleString([], {
