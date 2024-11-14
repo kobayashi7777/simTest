@@ -19,8 +19,9 @@ class Equipment {
     }
 
     getCombatStat(combatStat) {
-        let multiplier = enhancementLevelTotalMultiplierTable[this.enhancementLevel];
+        if (!this.gameItem.equipmentDetail.combatStats.hasOwnProperty(combatStat)||!this.gameItem.equipmentDetail.combatEnhancementBonuses.hasOwnProperty(combatStat))return 0;
 
+        let multiplier = enhancementLevelTotalMultiplierTable[this.enhancementLevel];
         let stat =
             this.gameItem.equipmentDetail.combatStats[combatStat] +
             multiplier * this.gameItem.equipmentDetail.combatEnhancementBonuses[combatStat];
